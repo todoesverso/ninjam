@@ -134,6 +134,10 @@ int main(int argc, char **argv)
         exit(1);
     }
 
+    if (!parmpass) {
+      parmpass = "";
+    }
+
     g_audio = create_audioStreamer_JACK("JACK", audiostream_onsamples);
 
     if (!g_audio) {
