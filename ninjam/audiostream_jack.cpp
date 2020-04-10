@@ -97,7 +97,7 @@ audioStreamer_JACK::audioStreamer_JACK( const char *cfg, SPLPROC proc)
 
     splproc = proc;
 
-    if ((client = jack_client_new ("ninjam")) == 0) {
+    if ((client = jack_client_open ("ninjam", JackNoStartServer, NULL)) == 0) {
 	fprintf (stderr, "jack server not running?\n");
 	exit(20);
     }
